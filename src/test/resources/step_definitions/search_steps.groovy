@@ -13,7 +13,7 @@ When(~'I search for "(.+)"') { searchTerm ->
 	searchFor(searchTerm)
 }
 
-Then(~'I am at the results page') { ->
+Then(~'I should see the the results page') { ->
 	at GoogleResultsPage
 } 
 
