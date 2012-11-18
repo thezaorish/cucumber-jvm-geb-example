@@ -5,7 +5,7 @@ class GoogleResultsPage extends Page {
 	static at = {
 		waitFor {
 			title.endsWith("Google Search") || title.endsWith("Căutare Google")
-			// dependeing on the location settings
+			// depending on the location settings
 		}
 	}
 	
