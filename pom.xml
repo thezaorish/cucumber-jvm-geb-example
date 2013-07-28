@@ -18,7 +18,7 @@
 	
 	    <asm.version>3.3.1</asm.version>
 	    <antlr.version>3.4</antlr.version>
-	    <cucumber-jvm.version>1.0.14</cucumber-jvm.version>
+	    <cucumber-jvm.version>1.1.2</cucumber-jvm.version>
 	    <cucumber-html.version>0.2.3</cucumber-html.version>
 	    <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
 	    <gherkin.version>2.9.0</gherkin.version>
@@ -233,7 +233,7 @@
 	                    </goals>
 	                    <configuration>
 	                    	<classpathScope>test</classpathScope>
-	                        <mainClass>cucumber.cli.Main</mainClass>
+	                        <mainClass>cucumber.api.cli.Main</mainClass>
 	                        <arguments>
 	                        	<argument>--format</argument>
 	                            <argument>${format}</argument>
