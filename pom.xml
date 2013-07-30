@@ -16,21 +16,16 @@
 	    <tagArg>~@ignore</tagArg>
 	    <format>pretty</format>
 	
-	    <asm.version>3.2</asm.version>
-	    <antlr.version>3.4</antlr.version>
-	    <cucumber-jvm.version>1.0.14</cucumber-jvm.version>
-	    <cucumber-html.version>0.2.1</cucumber-html.version>
+	    <cucumber-jvm.version>1.1.2</cucumber-jvm.version>
+	    <cucumber-html.version>0.2.3</cucumber-html.version>
 	    <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
 	    <gherkin.version>2.9.0</gherkin.version>
-	    <groovy.version>2.0.5</groovy.version>
+	    <groovy.version>2.1.6</groovy.version>
 	    <junit.version>4.10</junit.version>
-	    <mockito.version>1.9.0</mockito.version>
 	    <log4j.version>1.2.17</log4j.version>
-	    <maven-surefire-plugin.version>2.12</maven-surefire-plugin.version>
-	    <selenium-firefox-driver.version>2.25.0</selenium-firefox-driver.version>
-	    <geb.version>0.7.1</geb.version>
-    	<selenium-support.version>2.25.0</selenium-support.version>
-    	<apache-httpclient.version>4.2.1</apache-httpclient.version>
+	    <maven-surefire-plugin.version>2.12.3</maven-surefire-plugin.version>
+	    <selenium-firefox-driver.version>2.33.0</selenium-firefox-driver.version>
+	    <geb.version>0.9.0</geb.version>
     </properties>
     
   	<repositories>
@@ -41,11 +36,6 @@
 	    <repository>
 	    	<id>cukes</id>
 	    	<url>http://cukes.info/maven</url>
-	    </repository>
-	    <repository>
-	    	<id>openqa-releases</id>
-	    	<name>OpenQA Releases</name>
-	      	<url>http://nexus.openqa.org/content/repositories/releases</url>
 	    </repository>
 	</repositories>
 	
@@ -58,31 +48,11 @@
   	
   	<dependencyManagement>
     	<dependencies>
-        	<dependency>
-          		<groupId>asm</groupId>
-          		<artifactId>asm</artifactId>
-          		<version>${asm.version}</version>
-        	</dependency>
-            <dependency>
-                <groupId>info.cukes</groupId>
-                <artifactId>cucumber-jvm</artifactId>
-                <version>${cucumber-jvm.version}</version>
-             </dependency>  
-             <dependency>
-                <groupId>info.cukes</groupId>
-                <artifactId>cucumber-core</artifactId>
-                <version>${cucumber-jvm.version}</version>
-             </dependency>
              <dependency>
                 <groupId>info.cukes</groupId>
                 <artifactId>cucumber-groovy</artifactId>
                 <version>${cucumber-jvm.version}</version>
              </dependency>
-             <dependency>
-		        <groupId>info.cukes</groupId>
-		        <artifactId>cucumber-java</artifactId>
-		        <version>${cucumber-jvm.version}</version>
-      		 </dependency>   
              <dependency>
                 <groupId>info.cukes</groupId>
                 <artifactId>cucumber-junit</artifactId>
@@ -109,47 +79,22 @@
 	          	<version>${log4j.version}</version>
 	         </dependency>
 	         <dependency>
-	          	<groupId>org.antlr</groupId>
-	            <artifactId>antlr</artifactId>
-	            <version>${antlr.version}</version>
-	         </dependency>          
-	         <dependency>
 	         	<groupId>org.codehaus.groovy</groupId>
 	            <artifactId>groovy-all</artifactId>
 	            <version>${groovy.version}</version>
-	        </dependency>
-	        <dependency>
-	        	<groupId>org.mockito</groupId>
-	          	<artifactId>mockito-all</artifactId>
-	          	<version>${mockito.version}</version>
 	        </dependency>
 		</dependencies>
     </dependencyManagement>
     
   	<dependencies>
         <dependency>
-	        <groupId>asm</groupId>
-	        <artifactId>asm</artifactId>
-	        <scope>test</scope>
-        </dependency>
-        <dependency>
 	        <groupId>info.cukes</groupId>
 	        <artifactId>cucumber-groovy</artifactId>
 	        <scope>test</scope>
 	    </dependency>
 	    <dependency>
-			<groupId>info.cukes</groupId>
-		    <artifactId>cucumber-java</artifactId>
-		    <scope>test</scope>
-	    </dependency>  
-	    <dependency>
 	        <groupId>info.cukes</groupId>
 	        <artifactId>cucumber-junit</artifactId>
-	        <scope>test</scope>
-	    </dependency>
-	    <dependency>
-	        <groupId>info.cukes</groupId>
-	        <artifactId>cucumber-core</artifactId>
 	        <scope>test</scope>
 	    </dependency>
 	    <dependency>
@@ -173,11 +118,6 @@
         	<scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.antlr</groupId>
-            <artifactId>antlr</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
         	<scope>test</scope>
@@ -188,13 +128,8 @@
 	      	<version>${selenium-firefox-driver.version}</version>
 	      	<scope>test</scope>
 	    </dependency>
-	    <dependency>
-	    	<groupId>org.seleniumhq.selenium</groupId>
-	      	<artifactId>selenium-support</artifactId>
-	      	<version>${selenium-support.version}</version>
-			</dependency>
 		<dependency>
-		  	<groupId>org.codehaus.geb</groupId>
+		  	<groupId>org.gebish</groupId>
 		  	<artifactId>geb-core</artifactId>
 		  	<version>${geb.version}</version>
 		</dependency>
@@ -202,15 +137,6 @@
 	
   	<build>
     	<plugins>
-        	<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
             <plugin>
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-surefire-plugin</artifactId>
@@ -231,7 +157,7 @@
 	                    </goals>
 	                    <configuration>
 	                    	<classpathScope>test</classpathScope>
-	                        <mainClass>cucumber.cli.Main</mainClass>
+	                        <mainClass>cucumber.api.cli.Main</mainClass>
 	                        <arguments>
 	                        	<argument>--format</argument>
 	                            <argument>${format}</argument>
