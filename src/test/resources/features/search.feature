@@ -1,5 +1,5 @@
 Feature: Google Search
-In order to show the power of Cucumber and Selenium combined
+In order to demonstrate the power of Cucumber and WebDriver combined
 As a Cucumber instructor
 I want to walk through a simple google search.
 
