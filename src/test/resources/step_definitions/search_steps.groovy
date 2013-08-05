@@ -1,7 +1,7 @@
 import geb.*
 
-this.metaClass.mixin(cucumber.runtime.groovy.Hooks)
-this.metaClass.mixin(cucumber.runtime.groovy.EN)
+this.metaClass.mixin(cucumber.api.groovy.Hooks)
+this.metaClass.mixin(cucumber.api.groovy.EN)
 this.metaClass.mixin(geb.Browser)
 
 Given(~'I am on the Google search page') { ->
