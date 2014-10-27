@@ -8,7 +8,7 @@ Scenario: Show you how to search on google
 Given I am on the Google search page
 When I search for "Wikipedia"
 Then I should see the results page
-And The first link should be "Wikipedia"
+And The first link should be "Wikipedia, the free encyclopedia"
 
 @youtube
 Scenario: Show you how to search on google
